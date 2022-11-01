@@ -32,12 +32,7 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - uses: azure/sql-action@v2
-      with:
-        connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
-        path: './Database.dacpac'
-        action: 'Publish'
-    - name: 'Set up latest Oracle JDK 17'
+    - name: 'Set up latest Oracle JDK 18'
       uses: oracle-actions/setup-java@v1
       with:
         website: jdk.java.net
